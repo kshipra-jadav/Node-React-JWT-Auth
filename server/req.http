@@ -1,0 +1,15 @@
+POST http://localhost:8000/login
+Content-Type: application/json
+
+{
+  "username": "Aditya",
+  "password": "123"
+}
+
+###
+
+
+###
+GET http://localhost:8000/posts
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWRpdHlhIiwiaWF0IjoxNjU4NTk4NDQ5fQ.TS8CPnTHt5_IqVqrpxzYFe4bbbnn2RSFu77JR6fvqZ4
+###
