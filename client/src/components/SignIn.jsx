@@ -6,10 +6,19 @@ const SignIn = ({setLoggedIn}) => {
 		const username = e.target[0].value
 		const password = e.target[1].value
 		e.target.reset()
-		const { data } = await axios.post('http://localhost:8000/signin', {username, password})
-		setLoggedIn(data.user.username)
-		localStorage.setItem("accessToken", JSON.stringify(data.accessToken))
-		localStorage.setItem("user", JSON.stringify(data.user))
+		try {
+			const { data } = await axios.post('http://localhost:8000/signin', {username, password})
+			setLoggedIn(data.user.username)
+			localStorage.setItem('accessToken', JSON.stringify(data.accessToken))
+			localStorage.setItem('user', JSON.stringify(data.user))
+		}
+		catch(e) {
+		window.alert('Wrong Username or Password!')
+
+		}
+
+
+
 	}
 	return (<>
 		<form action="#" onSubmit={handleSubmit}>
